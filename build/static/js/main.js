@@ -106,10 +106,6 @@ $(document).ready(function () {
 });
 "use strict";
 "use strict";
-"use strict";
-"use strict";
-"use strict";
-"use strict";
 'use strict';
 
 $(document).ready(function () {
@@ -135,18 +131,6 @@ $(document).ready(function () {
 'use strict';
 
 $(document).ready(function () {
-    var gallerySlider = new Swiper('.gallery__slider', {
-        loop: true,
-        slidesPerView: 1,
-        navigation: {
-            nextEl: '.gallery__slider-next',
-            prevEl: '.gallery__slider-prev'
-        }
-    });
-});
-'use strict';
-
-$(document).ready(function () {
     var header = $('.header'),
         body = $('body');
     function bodyPaddingTop() {
@@ -166,14 +150,6 @@ $(document).ready(function () {
         }
     });
 });
-"use strict";
-"use strict";
-"use strict";
-"use strict";
-"use strict";
-"use strict";
-"use strict";
-"use strict";
 "use strict";
 'use strict';
 

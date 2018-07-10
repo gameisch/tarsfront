@@ -5,7 +5,7 @@ html(class="no-js", lang="en")
     include ../components/header/header
     include ../components/footer/footer
     include ../components/hero/hero
-    include ../components/testimonials/testimonials
+    include ../components/a-testimonials/a-testimonials
     include ../components/contacts/contacts
 
     head
@@ -16,15 +16,13 @@ html(class="no-js", lang="en")
             +header
             -
                 var heroData = {
-                    header: 'Some Header text <span>.</span>',
-                    text: 'Sample text| description',
-                    button: 'More <sup>→</sup>',
-                    klass: '',
+                header: '',
+                sHeader: '',
+                klass: 'hero--small'
                 }
             +hero(heroData)
-            +testimonials
+            +a-testimonials
             +contacts
-
         +footer
 
 

@@ -4,11 +4,8 @@ html(class="no-js", lang="en")
     include ../components/head/head
     include ../components/header/header
     include ../components/footer/footer
-    include ../components/label/label
     include ../components/hero/hero
-    include ../components/features/features
-    include ../components/state/state
-    include ../components/a-testimonials/a-testimonials
+    include ../components/testimonials/testimonials
     include ../components/contacts/contacts
 
     head
@@ -19,17 +16,14 @@ html(class="no-js", lang="en")
             +header
             -
                 var heroData = {
-                header: 'Who We Serve<span>.</span>',
-                sHeader: 'Industry name',
-                klass: 'hero--small'
+                    header: '',
+                    sHeader: 'HOMEPAGES',
+                    klass: 'hero--small'
                 }
             +hero(heroData)
-            +label({isImaged: true})
-            +features({type: 1})
-            +state({image: '%=static=%img/content/state-1.png', reverse: true, grey: true})
-            +state({image: '%=static=%img/content/state-2.png'})
-            +a-testimonials
+            +testimonials
             +contacts
+
         +footer
 
 

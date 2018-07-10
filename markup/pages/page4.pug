@@ -5,10 +5,7 @@ html(class="no-js", lang="en")
     include ../components/header/header
     include ../components/footer/footer
     include ../components/hero/hero
-    include ../components/label/label
     include ../components/about-sales/about-sales
-    include ../components/search-job/search-job
-    include ../components/posts/posts
     include ../components/contacts/contacts
 
     head
@@ -19,15 +16,12 @@ html(class="no-js", lang="en")
             +header
             -
                 var heroData = {
-                header: 'AMP Careers<span>.</span>',
+                header: 'Some text here<span>.</span>',
                 klass: 'hero--small'
                 }
             +hero(heroData)
-            +label({isImaged: true})
             +about-sales
-            +search-job
-            +posts
-            +contacts({isCareers: true, header: 'Apply NOW', text: 'Maybe We\'ll Accept General Submissions'})
+            +contacts({isCareers: true, header: 'Button', text: 'Maybe We\'ll Accept General Submissions'})
         +footer
 
 
