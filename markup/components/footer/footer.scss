@@ -1,0 +1,127 @@
+.footer {
+    background-color: #212125;
+    padding: em(80) 0;
+    &__inner {
+        @include wrapper();
+    }
+    &__links {
+        margin-right: 10%;
+        @include max-screen($grid-sl) {
+            margin: 0 1% 15px;
+            width: 31%;
+            text-align: center;
+        }
+        @include max-screen($grid-sm) {
+            width: 100%;
+            margin: 0 0 35px;
+        }
+        &-header {
+            font-family: 'Trade Gothic STD', Montserrat, sans-serif;
+            color: $orange;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-size: em(14);
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            transition: .2s;
+            &:hover {
+                opacity: .5;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__socials {
+        flex-grow: 1;
+        text-align: right;
+        align-items: center;
+        @include max-screen($grid-sl) {
+            width: 100%;
+            margin-bottom: 25px;
+            margin-top: 25px;
+            text-align: center;
+        }
+        a {
+            // color: #555;
+            color:#fff;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 13%;
+            transition: .2s;
+            font-size: 1.5em;
+            width: 38px;
+            height: 38px;
+            // background-color: #7F7F7F;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition:all .2s;
+            @include max-screen($grid-sl) {
+                margin: 0 15px;
+            }
+            &:hover {
+                color: $orange;
+                
+            }
+        }
+        // .facebook{
+        //     &:hover{
+        //         background-color: rgb(59, 89, 152);
+        //     }
+        // }
+        // .linkedin{
+        //     &:hover{
+        //         background-color: rgba(59, 89, 152, .7);
+        //     }
+        // }
+        .cust-icon{
+            position: relative;
+            height: 28px;
+            width:40px;
+            background: rgba(0, 0, 0, 0);
+            span{
+                display: inline-block;
+                width: 100%;
+                height: 40px;
+                left:0;
+                top:0;
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            
+        }
+        .glassdoor{
+            span{
+                background-image: url(../img/content/glassdoor.svg);
+                transition: all .2s;
+            }
+            &:hover{
+                span{
+                    background-image: url(../img/content/glassdoor-hover.svg);
+                }
+            }
+        }
+    }
+    &__copyright {
+        width: 100%;
+        position: relative;
+        top:-1.2em;
+        text-align: right;
+        color: #555;
+        font-size: em(16);
+        font-weight: 400;
+        letter-spacing: 0.8px;
+        @include max-screen($grid-sl) {
+            text-align: center;
+            font-size: em(14);
+            top:1.2em;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+html {
+    font-size: #{$default-font-size}px;
+    min-width: 320px;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    display: flex;
+    min-height: 100vh;
+    min-width: 320px;
+    flex-direction: column;
+    &.disable-scroll {
+        overflow: hidden;
+    }
+    @include max-screen($grid-ls) {
+        padding-top: 0!important;
+    }
+}
+.-content- {
+    flex-grow: 1;
+}
+img {
+    max-width: 100%;
+}
+*:focus {
+    outline: none;
+}
+input, textarea {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+a {
+    color: $orange;
+}

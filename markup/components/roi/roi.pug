@@ -1,0 +1,10 @@
+mixin roi(data)
+    section.roi
+        .roi__inner
+            .roi__header Roi
+            .roi__items
+                - for (var i = 0; i < 6; i++)
+                    .roi-item
+                        .roi-item__image
+                            img(src='%=static=%img/content/roi-logo-' + i + '.png')
+                        .roi-item__header The immediacy of putting an offer or a massage on the screen

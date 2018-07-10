@@ -1,0 +1,16 @@
+mixin partners(data)
+    section.partners
+        .partners__logos
+            - for (var i = 0; i < 9; i++)
+                .partners__item
+                    img(src='%=static=%img/content/vLogo' + i + '.png')
+        .partners__info
+            .partners__pre BECOME OUR PARTNER
+            .partners__text
+                | We’ve earned the trust of
+                =' '
+                span over 50,000
+                =' '
+                | businesses nationwide for our local offline advertising resources and social media tools
+            a(href='#').partners__link READ MORE
+                sup →

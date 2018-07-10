@@ -1,0 +1,68 @@
+@import "vars";
+@function em($pixels, $context: $default-font-size) {
+    @return #{$pixels/$context}em;
+}
+@function rem($pixels, $context: $default-font-size) {
+    @return #{$pixels/$context}rem;
+}
+@mixin wrapper($wi: $grid-lm) {
+    display: flex;
+    width: $wi;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    @media (max-width: $grid-lm) {
+        width: $grid-ls;
+    }
+    @media (max-width: $grid-ls) {
+        width: 100%;
+    }
+}
+
+@mixin max-screen($max) {
+    @media screen and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin min-screen($min) {
+    @media screen and (min-width: $min + 1px) {
+        @content;
+    }
+}
+
+@mixin button($color: $orange) {
+    display: inline-block;
+    font-family: 'Trade Gothic STD', sans-serif;
+    color: #fff;
+    font-size: em(14);
+    line-height: em(16);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2.6px;
+    text-decoration: none;
+    padding: 1.3em 2em;
+    transition: .2s;
+    background-color: $color;
+    border: 0;
+    border-radius: 4px;
+    &:hover {
+        background-color: darken($color, 5);
+    }
+}
+
+@mixin header($color: #000) {
+    color: $color;
+    font-size: em(36);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 50px;
+    @include max-screen($grid-sl) {
+        font-size: em(24);
+    }
+}

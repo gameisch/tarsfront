@@ -1,0 +1,11 @@
+mixin hero(data)
+    section.hero(class=data.klass ? data.klass : '')
+        .hero__inner
+            if data.header
+                .hero__header!=data.header
+            if data.sHeader
+                .hero__small-header!=data.sHeader
+            if data.text
+                .hero__text!=data.text
+            if data.button
+                a(href='#').hero__link!=data.button

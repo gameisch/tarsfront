@@ -1,0 +1,55 @@
+.roi {
+    padding: em(70) 0;
+    background-color: #f7f8f9;
+    &__inner {
+        @include wrapper();
+    }
+    &__header {
+        @include header();
+    }
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+    }
+}
+
+.roi-item {
+    width: 29.88888%;
+    margin: 0 20px 25px 20px;
+    @include max-screen(1244px){
+        width: 32%;
+        margin:25px 0;
+    }
+    @include max-screen($grid-ls) {
+        width: 48%;
+        margin:25px 0;
+    }
+    @include max-screen(550px) {
+        width: 100%;
+    }
+    &__image {
+        border: 1px solid #e7e7e7;
+        border-radius: 4px;
+        background-color: #fff;
+        padding-top: 70%;
+        position: relative;
+        margin-bottom: 25px;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 80%;
+        }
+    }
+    &__header {
+        font-size: em(22);
+        line-height: 1.5;
+        @include max-screen($grid-sl) {
+            font-size: em(18);
+        }
+    }
+}

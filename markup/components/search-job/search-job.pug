@@ -1,0 +1,14 @@
+mixin search-job(data)
+    section.search-job
+        .search-job__inner
+            .search-job__header Search For Positions Available Near You
+            form.form
+                .form__field.form__field--full
+                    label Location
+                    select
+                        option(disabled selected hidden)
+                        option one
+                        option two
+                        option three
+                .form__field.form__field--full
+                    button(type='submit') SEARCH NOW

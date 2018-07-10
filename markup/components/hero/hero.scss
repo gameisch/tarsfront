@@ -1,0 +1,78 @@
+.hero {
+    background-image: url(%=static=%content/hero-bg.jpg);
+    background-size: cover;
+    background-position: 50% 0;
+    &__inner {
+        @include wrapper();
+        min-height: 70vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 10%;
+        padding-bottom: 100px;
+        @include max-screen($grid-ls) {
+            align-items: center;
+        }
+    }
+    &__header {
+        color: #fff;
+        font-weight: 500;
+        font-size: em(100);
+        margin-bottom: 15px;
+        line-height: 1;
+        @include max-screen($grid-ls) {
+            font-size: em(52);
+            text-align: center;
+        }
+        @include max-screen($grid-sm) {
+            font-size: em(38);
+        }
+        span {
+            color: $orange;
+        }
+    }
+    &__small-header {
+        color: #fff;
+        font-size: em(32);
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1.6px;
+        @include max-screen($grid-ls) {
+            font-size: em(18);
+            text-align: center;
+        }
+    }
+    &__text {
+        color: #fff;
+        font-size: em(18);
+        font-weight: 400;
+        line-height: 1.5;
+        max-width: 420px;
+        margin-bottom: 60px;
+        @include max-screen($grid-ls) {
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+    &__link {
+        @include button();
+    }
+    &--small {
+        .hero__header {
+            font-size: em(70);
+            @include max-screen($grid-ls) {
+                font-size: em(52);
+                text-align: center;
+            }
+            @include max-screen($grid-sm) {
+                font-size: em(38);
+            }
+        }
+        .hero__inner {
+            min-height: 1px;
+            padding-top: em(150);
+            padding-bottom: em(150);
+            align-items: center;
+        }
+    }
+}

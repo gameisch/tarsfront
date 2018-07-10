@@ -1,0 +1,38 @@
+doctype html
+html(class="no-js", lang="en")
+
+    include ../components/head/head
+    include ../components/header/header
+    include ../components/footer/footer
+    include ../components/hero/hero
+    include ../components/label/label
+    include ../components/about-sales/about-sales
+    include ../components/search-job/search-job
+    include ../components/posts/posts
+    include ../components/contacts/contacts
+
+    head
+        +head(head.defaults)
+    body
+        |%=symbols=%
+        .-content-
+            +header
+            -
+                var heroData = {
+                header: 'AMP Careers<span>.</span>',
+                klass: 'hero--small'
+                }
+            +hero(heroData)
+            +label({isImaged: true})
+            +about-sales
+            +search-job
+            +posts
+            +contacts({isCareers: true, header: 'Apply NOW', text: 'Maybe We\'ll Accept General Submissions'})
+        +footer
+
+
+        script(src='%=static=%js/separate-js/svg4everybody.min.js')
+        script svg4everybody();
+
+        script(src='%=static=%js/separate-js/jquery-3.2.1.min.js')
+        script(src='%=static=%js/main%=hash=%%=min=%.js')

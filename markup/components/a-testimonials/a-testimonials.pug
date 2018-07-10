@@ -1,0 +1,14 @@
+mixin a-testimonials(data)
+    section.a-testimonials.state--grey
+        .a-testimonials__header Testimonials
+        .a-testimonials__slider.swiper-container
+            .swiper-wrapper
+                - for (var i = 0; i < 6; i++)
+                    .swiper-slide
+                        .at-item
+                            .at-item__content
+                                .at-item__name Ronald Diets
+                                .at-item__img
+                                    img(src="%=static=%img/content/testi-people2.jpg")
+                                .at-item__tag Aflac insurance
+                                .at-item__text Our well loved local directories generate a reliable stream of customer calls    

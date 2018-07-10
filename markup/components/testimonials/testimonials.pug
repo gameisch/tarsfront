@@ -1,0 +1,23 @@
+mixin testimonials(data)
+    section.testimonials
+        .testimonials__header Testimonials
+        .testimonials__slider.swiper-container
+            .swiper-wrapper
+                - for (var i = 0; i < 3; i++)
+                    .swiper-slide
+                        .t-item(style='background-image:url(%=static=%img/content/testi-people2.jpg)')
+                            .t-item__content
+                                .t-item__tag Aflac insurance
+                                .t-item__name Ronald Diets
+                                .t-item__text Our well loved local directories generate a reliable stream of customer calls
+                                //- a(href='#').t-item__arrow
+                                    span.icon-arrow-right
+                    .swiper-slide
+                        .t-item(style='background-image:url(%=static=%img/content/testi-people.jpg)')
+                            .t-item__content
+                                .t-item__tag Aflac insurance
+                                .t-item__name Ronald Diets
+                                .t-item__text Our well loved local directories generate a reliable stream of customer calls
+                                //- a(href='#').t-item__arrow
+                                    span.icon-arrow-right                
+            .swiper-pagination

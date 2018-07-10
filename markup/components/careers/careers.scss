@@ -1,0 +1,66 @@
+.careers {
+    position: relative;
+    padding: em(80) 0;
+    background-color: #f4f0ee;
+    &__inner {
+        @include wrapper();
+        position: relative;
+        z-index: 1;
+    }
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        @include max-screen($grid-sl) {
+            width: 100%;
+            height: 500px;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(#f4f0ee, .25);
+            }
+        }
+    }
+    &__header {
+        @include header();
+        @include max-screen($grid-sl) {
+            margin-bottom: 455px
+        }
+    }
+    &__content {
+        width: 50%;
+        margin-left: 50%;
+        padding-left: em(80);
+        margin-top: 10%;
+        margin-bottom: 10%;
+        @include max-screen($grid-sl) {
+            margin-top: 0;
+            margin-bottom: 0;
+            width: 100%;
+            margin-left: 0;
+            padding-left: 0;
+            text-align: center;
+        }
+        p {
+            color: #000;
+            font-size: em(18);
+            font-weight: 400;
+            line-height: 1.67;
+            margin: 0 0 35px;
+            @include max-screen($grid-sl) {
+                font-size: em(16);
+            }
+        }
+        a {
+            @include button();
+        }
+    }
+}

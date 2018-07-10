@@ -1,0 +1,29 @@
+mixin awards(data)
+    -
+        var items = [
+        {
+        logo: '%=static=%img/content/award-1.png',
+        },
+        {
+        logo: '%=static=%img/content/award-2.png',
+        },
+        {
+        logo: '%=static=%img/content/award-3.png',
+        },
+        {
+        logo: '%=static=%img/content/award-4.png',
+        }
+        ]
+    section.awards
+        .awards__inner
+            .awards__header Awards
+            .awards__items
+                for item in items
+                    .product-item
+                        .product-item__image
+                            img.product-item__logo(src=item.logo)
+                        .product-item__data 24 JUNE 2018
+                        .product-item__header 2018 Moving Forward Press Release
+                        a(href='#').product-item__link Read More →
+
+

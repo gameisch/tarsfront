@@ -1,0 +1,43 @@
+doctype html
+html(class="no-js", lang="en")
+
+    include ../components/head/head
+    include ../components/header/header
+    include ../components/footer/footer
+    include ../components/hero/hero
+    include ../components/partners/partners
+    include ../components/products/products
+    include ../components/careers/careers
+    include ../components/awards/awards
+    include ../components/testimonials/testimonials
+    include ../components/contacts/contacts
+
+    head
+        +head(head.defaults)
+    body
+        |%=symbols=%
+        .-content-
+            +header
+            -
+                var heroData = {
+                    header: 'We Are Experts<span>.</span>',
+                    text: 'In helping local business owners advertise intelligently, online and off',
+                    button: 'LEARN MORE →',
+                    klass: '',
+                }
+            +hero(heroData)
+            +partners
+            +products
+            +careers
+            +awards
+            +testimonials
+            +contacts
+
+        +footer
+
+
+        script(src='%=static=%js/separate-js/svg4everybody.min.js')
+        script svg4everybody();
+
+        script(src='%=static=%js/separate-js/jquery-3.2.1.min.js')
+        script(src='%=static=%js/main%=hash=%%=min=%.js')

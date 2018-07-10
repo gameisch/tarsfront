@@ -1,0 +1,125 @@
+.about-sales {
+    padding: em(20) 0 0;
+    &__inner {
+        @include wrapper();
+    }
+    &__nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        padding: 0 15px;
+        z-index: 1;
+        position: relative;
+        @include max-screen($grid-sm) {
+            padding: 0 10px;
+        }
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 333px;
+            color: #000;
+            font-size: em(20);
+            font-weight: 500;
+            padding: em(30, 20) 1em;
+            text-align: center;
+            border: 1px solid #e6e6e6;
+            border-bottom: 0;
+            border-right: 0;
+            background-color: #fff;
+            position: relative;
+            transition: .2s;
+            cursor: pointer;
+            @include max-screen($grid-sl) {
+                font-size: 16px;
+            }
+            @include max-screen($grid-sm) {
+                font-size: 12px;
+                padding: 10px;
+            }
+            &:last-child {
+                border-right: 1px solid #e6e6e6;
+            }
+            &--active {
+                background-color: #f7f8f9;
+                &:after {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    bottom: -1px;
+                    left: 0;
+                    background-color: #f7f8f9;
+                }
+            }
+        }
+    }
+    &__content {
+        background-color: #f7f8f9;
+        border-top: 1px solid #e6e6e6;
+        border-bottom: 1px solid #e6e6e6;
+        padding: em(70) 0;
+        position: relative;
+    }
+}
+
+.as-tab {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    display: none;
+    transition: .6s;
+    &--active {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 1;
+    }
+    &__content {
+        width: 45%;
+        @include max-screen($grid-sl) {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+    }
+    &__header {
+        font-size: em(32);
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        margin-bottom: 35px;
+        @include max-screen($grid-sl) {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    }
+    &__text {
+        color: #000;
+        font-size: em(16);
+        font-weight: 300;
+        line-height: 1.8;
+        p {
+            margin: 0 0 25px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__image {
+        width: 45%;
+        @include max-screen($grid-sl) {
+            width: 100%;
+        }
+        img {
+            display: block;
+            border-radius: 4px;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+}

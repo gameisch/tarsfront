@@ -1,0 +1,34 @@
+mixin contacts(data)
+    - if (!data) data = {}
+    section.contacts
+        .contacts__inner
+            .contacts__header
+                != data.header ? data.header : 'Contact Us'
+            .contacts__text
+                != data.text ? data.text : 'Learn How We Can Solve Your Business Problems'
+            form.form
+                .form__field
+                    label NAME
+                    input(type='text')
+                .form__field
+                    label e-mail
+                    input(type='email')
+                unless data.isCareers
+                    .form__field
+                        label company
+                        input(type='text')
+                .form__field(class= data.isCareers ? 'form__field--full' : '')
+                    label phone
+                    input(type='text')
+                .form__field.form__field--full
+                    label phone
+                    textarea
+                if data.isCareers
+                    .form__field.form__field--full
+                        .form__file-input
+                            span ATTACH RESUME
+                            input(type='file')
+                .form__field.form__field--full
+                    button(type='submit') send now
+                .form__field.form__field--full
+                    p Thank you for your letter!

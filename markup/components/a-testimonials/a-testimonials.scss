@@ -1,0 +1,81 @@
+.a-testimonials {
+    position: relative;
+    padding: em(70) 0;
+    &__header {
+        @include header(#000);
+    }
+    &__slider {
+        width: 1240px;
+        padding: 5px;
+        @include max-screen(1320px){
+            width: 100%;
+            padding: 15px;
+        }
+    }
+}
+.at-item {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 1px rgba(#000, .1);
+    @include max-screen($grid-ls) {
+        min-height: 1px;
+        padding: 50px 0;
+    }
+    &__content {
+        text-align: center;
+        padding: 0 50px;
+        @include max-screen($grid-ls) {
+            max-width: 100%;
+        }
+    }
+    &__tag {
+        font-family: 'Trade Gothic STD', Montserrat, sans-serif;
+        padding: 4px 6px 2px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    &__img{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 20px auto;
+        img{
+            width: 100%;
+        }
+    }
+    &__name {
+        @include header;
+        font-size: em(30);
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+        @include max-screen($grid-sl) {
+            font-size: em(36);
+            margin-bottom: 25px;
+        }
+    }
+    &__text {
+        line-height: 1.8;
+    }
+    &__arrow {
+        margin-top: 40px;
+        color: $orange;
+        font-size: 2em;
+        text-decoration: none;
+        display: inline-block;
+        @include max-screen($grid-ls) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,308 @@
+.is-sticky{
+    .header__inner{
+       
+        @media (min-width:$grid-ls){
+            padding-top: em(12);
+            padding-bottom: em(12);
+        }
+        .header__logo{
+            & > * {
+                transition: all .2s;
+            }
+            &White{
+                @include max-screen($grid-ls) {
+                    display: none!important;
+                }
+            }
+            &Dark{
+                @include max-screen($grid-ls) {
+                    display: inline-block!important;
+                }
+            }
+        }
+    }
+    .header__phone{
+        @include max-screen($grid-ls){
+            color: #606060;
+        }
+    }
+    @include max-screen($grid-ls) {
+        background-color: rgba(#fff, .33)!important;
+    }
+    
+}
+.header {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 320px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(#000, .1);
+    z-index: 99;
+    @include max-screen($grid-ls) {
+        background-color: transparent;
+        box-shadow: none;
+    }
+    &__inner {
+        @include wrapper();
+        padding-top: em(35);
+        padding-bottom: em(35);
+        align-items: center;
+        flex-wrap: nowrap;
+        transition: all .2s;
+        
+        @include max-screen($grid-lm) {
+            width: 100%;
+        }
+        @include max-screen($grid-ls) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    &__logo {
+        &>img{
+            max-width: 100px;
+            min-width: 90px;
+        }
+        &White{
+            display: none;
+            @include max-screen($grid-ls) {
+                display: inline-block;
+            }
+        }
+        &Dark{
+            @include max-screen($grid-ls) {
+                display: none;
+            }
+        }
+        @include max-screen($grid-ls) {
+            flex-grow: 1;
+        }
+    }
+    &__menu-button {
+        display: none;
+        color: $orange;
+        font-size: em(28);
+        margin-left: 20px;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: -2px;
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 700;
+        }
+        span.icon-cross {
+            display: none;
+        }
+        @include max-screen($grid-ls) {
+            display: block;
+        }
+    }
+    &__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        margin: 0 5%;
+        @include max-screen($grid-lm) {
+            margin: 0 10px;
+        }
+        @include max-screen($grid-ls) {
+            transition: .2s;
+            display: block;
+            transform: scale(1, 0) translateY(-100%);
+            opacity: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            width: 100%;
+            margin: 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 8px rgba(#000, .08);
+            max-height: 88vh;
+            overflow: auto;
+        }
+    }
+    &__sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        background-color: #fff;
+        padding: 1em;
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+        transition: .2s;
+        box-shadow: 0 2px 8px rgba(#000, .08);
+        @include max-screen($grid-ls) {
+            transition: none;
+        }
+        a {
+            display: block;
+            margin-bottom: 15px;
+            white-space: nowrap;
+            font-weight: 400!important;
+            letter-spacing: 0!important;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__menu-item {
+        margin: 0 15px;
+        position: relative;
+        padding: 10px;
+        @include max-screen($grid-lm) {
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        &--sub {
+            padding-right: 15px;
+            &::after {
+                content: '\e93a';
+                font-family: Linearicons, sans-serif;
+                color: $orange;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                font-size: 10px;
+            }
+        }
+        &:hover {
+            .header__sub-menu {
+                transform: translateX(-50%) scale(1);
+                opacity: 1;
+            }
+        }
+        a {
+            font-size: em(13);
+            text-transform: uppercase;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .2s;
+            letter-spacing: 1.3px;
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+    &__phone {
+        color: #606060;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: em(13);
+        transition: .2s;
+        @include max-screen($grid-sm) {
+            font-size: 14px;
+        }
+        @include max-screen($grid-ls) {
+            margin-left: 15px;
+            color:#fff;
+        }
+        span {
+            vertical-align: middle;
+        }
+        .fa {
+            background-color: $orange;
+            color: #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            margin-right: 8px;
+            @include max-screen($grid-sm) {
+                display: none;
+            }
+            &:before {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        &:hover {
+            color: $orange;
+        }
+    }
+    .hidn{
+        display: none;
+        margin: 0 5px;
+        padding: 10px;
+        text-align: center;
+        color: #606060;
+        font-size: 20px;
+        font-weight: 900;
+        width: 100%;
+        .fa{
+            width: 30px;
+            height: 30px;
+            margin-left: -20px;
+            margin-right: 8px;
+        }
+    }
+    &--menu-active {
+        background-color: rgba(#000, .8)!important;
+        .header__menu-button {
+            span.icon-menu {
+                display: none;
+            }
+            span.icon-cross {
+                display: block;
+                color:#fff;
+            }
+        }
+        .visb{
+            opacity: 0;
+        }
+        .hidn{
+            display: inline-block;
+        }
+        .header__menu {
+            background-color: rgba(#000, .8);
+            
+            @include max-screen($grid-ls) {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+                .header__sub-menu {
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                    transform: none;
+                    opacity: 1;
+                    box-shadow: none;
+                    padding: 1em 0 0 0;
+                }
+                .header__menu-item {
+                    text-align: center;
+                    a {
+                        color:#fff;
+                        font-size: 20px;
+                        font-weight: 900;
+                    }
+                    .header__sub-menu{
+                        background-color: transparent;
+                        a{
+                            font-size: 14px;
+                            text-transform: lowercase;
+                        }
+                    }
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

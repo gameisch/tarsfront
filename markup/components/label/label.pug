@@ -1,0 +1,9 @@
+mixin label(data)
+    -
+        if (!data) data = {}
+    section.label
+        .label__inner
+            .label__logo(style=data.isImaged ? 'background-image:url(%=static=%img/content/label.png)' : '' )
+                unless data.isImaged
+                    img(src='%=static=%img/content/home-pages--orange.png')
+            .label__text Distinctive community telephone directories that exclusively list the local residents and the local businesses from a particular town

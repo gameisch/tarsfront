@@ -1,0 +1,35 @@
+mixin header(data)
+    header.header
+        .header__inner
+            a(href='#').header__logo
+                img(class='header__logoDark', src='%=static=%img/content/AMP-logo.svg')
+                img(class='header__logoWhite', src='%=static=%img/content/AMP-logo-white.svg')
+            .header__menu
+                .header__menu-item.header__menu-item--sub
+                    a(href='#') Solutions
+                    .header__sub-menu
+                        a(href='#') sub menu item 1
+                        a(href='#') sub menu item 2
+                        a(href='#') sub menu item 3
+                        a(href='#') sub menu item 4
+                        a(href='#') sub menu item 5
+                .header__menu-item
+                    a(href='#') Who We Are
+                .header__menu-item
+                    a(href='#') Who We Serve
+                .header__menu-item
+                    a(href='#') Blog
+                .header__menu-item
+                    a(href='#') Careers
+                .header__menu-item
+                    a(href='#') Contact
+                .header__menu-item
+                    a(href='#').header__phone.hidn
+                        span.fa.fa-phone
+                        span (800) 579-0710    
+            a(href='#').header__phone.visb
+                span.fa.fa-phone
+                span (800) 579-0710
+            .header__menu-button
+                span.icon-cross
+                span.icon-menu

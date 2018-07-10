@@ -1,0 +1,36 @@
+mixin products(data)
+    -
+        var items = [
+            {
+                image: '',
+                logo: '%=static=%img/content/home-pages.png',
+                text: `<strong>Our well loved</strong> local directories generate a reliable stream of customer calls.`
+            },
+            {
+                image: 'background-image: url(%=static=%img/content/product-image.jpg)',
+                logo: '%=static=%img/content/close-by.png',
+                text: `<strong>Put your message</strong> where it won’t be missed – on the front screen of your best customers’ phones.`
+            },
+            {
+                image: '',
+                logo: '%=static=%img/content/optima.png',
+                text: `Being <strong>found easily online</strong> is critical; managing your online image is key.`
+            },
+            {
+                image: '',
+                logo: '%=static=%img/content/virtual-tours.png',
+                text: `<strong>We've provide the unique</strong> and powerful Google Street View tour to thousands of businesses nationwide.`
+            }
+        ]
+    section.products
+        .products__inner
+            .products__header Our Products
+            .products__text We simplify important marketing and lead generation activities and give you access to several thousands of customers
+            .products__items
+                for item in items
+                    .product-item
+                        a.product-item__image(style=item.image)
+                            img.product-item__logo(src=item.logo)
+                        .product-item__text!=item.text
+                        a(href='#').product-item__link Read More →
+

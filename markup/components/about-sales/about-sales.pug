@@ -1,0 +1,19 @@
+mixin about-sales(data)
+    -
+        var items = ['Outside Sales', 'Inside Sales', 'Management']
+    section.about-sales
+        .about-sales__nav
+            - for (var i = 0; i < items.length; i++)
+                .about-sales__nav-item(class= i === 0 ? 'about-sales__nav-item--active' : '', data-tab-name=items[i])
+                    span #{items[i]}
+        .about-sales__content
+            .about-sales__inner
+                - for (var i = 0; i < 3; i++)
+                    .as-tab(class= i === 0 ? 'as-tab--active' : '', data-tab-name=items[i])
+                        .as-tab__content
+                            .as-tab__header #{items[i]}
+                            .as-tab__text
+                                p The immediacy of putting an offer or a massage on the screen of a customer’s phone allows you to drive revenue in response to real-time market conditions
+                                p Unsold or Expiring Inventory – When you need to move product, text gets the word out
+                        .as-tab__image
+                            img(src='%=static=%img/content/about-sales-image.jpg')

@@ -1,0 +1,32 @@
+mixin features(data)
+    -
+        var types = [
+            {
+                value: '105%',
+                text: 'apples fallen closer to the tree'
+            },
+            {
+                value: '90',
+                text: 'more chimney’s swept a week'
+            },
+            {
+                value: '1,000+',
+                text: 'other things we get done a day'
+            }
+        ]
+    .features
+        .features__inner
+            .features__header FEATURES
+            .features__items
+                if data.type === 0
+                    - for (var i = 1; i < 4; i++)
+                        .feature-item
+                            .feature-item__header Drive Business on Slow Days
+                            .feature-item__image
+                                img(src='%=static=%img/content/feature' + i + '.svg')
+                            .feature-item__text The immediacy of putting an offer or a massage on the screen of a customer’s phone.
+                if data.type === 1
+                    for type in types
+                        .feature-type
+                            .feature-type__value!= type.value
+                            .feature-type__text!= type.text

@@ -1,0 +1,15 @@
+mixin gallery(data)
+    section.gallery
+        .gallery__inner
+            .gallery__header Gallery
+            .gallery__slider.swiper-container
+                .swiper-wrapper
+                    - for (var i = 1; i < 6; i++)
+                        .swiper-slide
+                            .gallery__image(style='background-image:url(%=static=%img/content/gallery-' + i + '.png)')
+                .gallery__slider-prev
+                    span.icon-chevron-left
+                .gallery__slider-next
+                    span.icon-chevron-right
+            //- .gallery__more
+            //-     a(href='#') SHOW MORE →
